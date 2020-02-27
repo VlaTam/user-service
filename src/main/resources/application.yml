@@ -1,0 +1,17 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/user_store?timeZone=Europe/Moscow
+    username: postgres
+    password: Sector578_
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+server:
+  port: 9090
+
+project:
+  user:
+    page:
+      size: 10
