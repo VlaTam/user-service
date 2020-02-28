@@ -8,4 +8,5 @@ public interface UserService {
 
     UserDto save(UserDto userDto);
     List<UserDto> findAll(int pageNumber);
+    boolean isExisted(String userName, String password);
 }

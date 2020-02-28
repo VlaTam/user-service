@@ -7,5 +7,6 @@ import java.util.List;
 public interface UserDao {
 
     UserEntity save(UserEntity userEntity);
-    List<UserEntity> findAll(int pageNumber);
+    List<UserEntity> findAll(int pageNumber, int pageSize);
+    boolean isExisted(String userName, String password);
 }

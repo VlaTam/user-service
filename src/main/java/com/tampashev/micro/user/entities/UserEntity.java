@@ -1,5 +1,8 @@
 package com.tampashev.micro.user.entities;
 
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
+
 import javax.persistence.*;
 import java.util.Date;
 
@@ -22,14 +25,16 @@ public class UserEntity {
     private boolean expired;
 
     @Temporal(TemporalType.TIMESTAMP)
+    @CreationTimestamp
     @Column(name = "registration_date", nullable = false, updatable = false)
     private Date registrationDate;
 
     @Temporal(TemporalType.TIMESTAMP)
+    @UpdateTimestamp
     @Column(name = "last_visit_date", nullable = false)
     private Date lastVisitDate;
 
-    @PrePersist
+    /*@PrePersist
     private void setRegistrationDate(){
         registrationDate = (registrationDate == null) ? new Date() : registrationDate;
         lastVisitDate = (lastVisitDate == null) ? registrationDate : lastVisitDate;
@@ -38,7 +43,7 @@ public class UserEntity {
     @PostLoad
     private void setLastVisitDate(){
         lastVisitDate = new Date();
-    }
+    }*/
 
     public String getUserName() {
         return userName;
